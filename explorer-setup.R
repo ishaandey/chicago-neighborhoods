@@ -339,11 +339,10 @@ m.top2.bg <- basemap.bg %>%
     label = ~ labels
     
   ) %>%
-  addLegend(pal = cmap.race, values = ~race.codes, 
-            title = htmltools::HTML("2nd-Most <br>Prevailing <br>Race"),
-            opacity = .8,
+  addLegend(pal = cmap.race.legend, values = ~race.labels, 
+            title = htmltools::HTML("2nd Prevailing Race"),
+            opacity = max.alpha,
   )
-
 
 
 
@@ -363,9 +362,9 @@ m.top1.h3 <- basemap.h3 %>%
     label = ~ labels
     
   ) %>%
-  addLegend(pal = cmap.race.legend, values = ~race.codes, 
+  addLegend(pal = cmap.race.legend, values = ~race.labels[1:4], 
             title = htmltools::HTML("Prevailing Race"),
-            opacity = .8,
+            opacity = max.alpha,
   )
 
 
@@ -385,9 +384,9 @@ m.top2.h3 <- basemap.h3 %>%
     label = ~ labels
     
   ) %>%
-  addLegend(pal = cmap.race, values = ~race.codes, 
-            title = htmltools::HTML("2nd-Most Prevailing Race"),
-            opacity = .8,
+  addLegend(pal = cmap.race.legend, values = ~race.labels, 
+            title = htmltools::HTML("2nd Prevailing Race"),
+            opacity = max.alpha,
   )
 
 ## ---- crime.h3 ------
